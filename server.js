@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Para todas as outras rotas, redireciona para a página inicial (útil para Single Page Applications)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'reset_password.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
