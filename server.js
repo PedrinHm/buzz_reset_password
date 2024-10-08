@@ -1,17 +1,16 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Serve os arquivos estáticos do diretório 'public'
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve arquivos estáticos da pasta raiz
+app.use(express.static(__dirname));
 
-// Para todas as outras rotas, redireciona para a página inicial (útil para Single Page Applications)
+// Rota para tratar qualquer caminho desconhecido e servir o index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor está rodando na porta ${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
