@@ -83,7 +83,7 @@ html, body {
 
 /* Background da página */
 .reset-password-container {
-  background-color: #395BC7; /* Cor de fundo */
+  background-color: #ffffff; /* Cor de fundo */
   min-height: 100vh;
   display: flex;
   justify-content: center;
